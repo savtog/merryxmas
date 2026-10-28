@@ -1,0 +1,44 @@
+[build-system]
+# 77+ understands the SPDX license expression and license-files
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "merryxmas"
+version = "0.1.0"
+description = "An animated Christmas card for the terminal"
+readme = "README.md"
+authors = [{ name = "Aleksandr Senkevich", email = "savtog@mail.ru" }]
+license = "GPL-3.0-only"
+license-files = ["LICENSE"]
+# the code uses "X | None" annotations
+requires-python = ">=3.10"
+dependencies = ["pyglet>=2.1"]
+keywords = ["christmas", "new year", "terminal", "curses", "ascii art"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: Console :: Curses",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Artistic Software",
+    "Topic :: Games/Entertainment",
+]
+
+[project.urls]
+Homepage = "https://codeberg.org/savtog/merryxmas"
+Source = "https://codeberg.org/savtog/merryxmas"
+Issues = "https://codeberg.org/savtog/merryxmas/issues"
+"Mirror (GitLab)" = "https://gitlab.com/savtog/merryxmas"
+"Mirror (GitHub)" = "https://github.com/savtog/merryxmas"
+
+[project.scripts]
+merryxmas = "merryxmas.__main__:merryxmas"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+merryxmas = ["trees/*.tre", "deers/*.der", "*.mp3"]
